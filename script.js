@@ -19,20 +19,48 @@ function seleccionar(){
 
 
 
-//Función para descargar CV
-function PDF() {
-    // Crea un nuevo objeto jsPDF
-    const doc = new jsPDF();
+// //Función para descargar CV
+// function PDF() {
+//     // Crea un nuevo objeto jsPDF
+//     const doc = new jsPDF();
 
-    // Añade el contenido que deseas al PDF
-    doc.text("Curriculum Vitae", 20, 10);
+//     // Añade el contenido que deseas al PDF
+//     doc.text("Curriculum Vitae", 20, 10);
 
-    // Guarda el PDF con un nombre específico, por ejemplo, "CV.pdf"
-    doc.save("CV.pdf");
+//     // Guarda el PDF con un nombre específico, por ejemplo, "CV.pdf"
+//     doc.save("CV.pdf");
+// }
+
+// // Agrega un event listener al botón para llamar a la función PDF() cuando se haga clic
+// document.getElementById("descargarCV").addEventListener("click", PDF);
+
+
+
+
+function PDF(){
+    const e = document.querySelector(".container");
+
+    e.style.maxWidth = "700px";
+    
+    const opt = {
+        filename: 'resume.pdf',
+        image: {
+            type: "jpg",
+            quality: 0.99
+        },
+        margin: 0,
+        jsPDF: {
+            unit: "pt",
+            format: "letter",
+            orientation: "portrait"
+        },
+        pagebreak: {
+            mode: ["avoid-all", "css", "legacy"]
+        }
+    }; 
+
+    setTimeout(() => {e.style.maxWidth = "1400px";}, 2000);
 }
-
-// Agrega un event listener al botón para llamar a la función PDF() cuando se haga clic
-document.getElementById("descargarCV").addEventListener("click", PDF);
 
 
 

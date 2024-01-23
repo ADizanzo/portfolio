@@ -217,6 +217,10 @@ html{
     margin-bottom: 10px;
 }
 
+.sobremi a{
+    text-decoration: none;
+}
+
 .sobremi button{
     cursor: pointer;
     background-color: transparent;
